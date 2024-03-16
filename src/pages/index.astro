@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro'
+import tailyUI from 'taily-ui'
+---
+
+<Layout
+    title="Welcome to Cybergelion"
+    description="AI chatbot based on 56B tokens LLM, powered by speech-to-text and voice synthesis."
+>
+    <main class="select-none overflow-hidden">
+        <fragment
+            set:html={tailyUI.OpenSourcePromo({
+                logo: '/favicon.svg',
+                title: 'Cybergelion',
+                color: 'error',
+                text: [
+                    { type: 'default', value: 'Generate' },
+                    { type: 'primary', value: 'beautiful' },
+                    {
+                        type: 'default',
+                        value: 'ideas with smart, personalized assistant fully trained for creative'
+                    },
+                    { type: 'secondary', value: 'conversations' }
+                ],
+                description: 'AI chatbot based on 56B tokens LLM, powered by speech-to-text and voice synthesis.',
+                button: {
+                    title: 'Say hello',
+                    link: '/'
+                },
+                github: 'https://github.com/nikdelvin/cybergelion'
+            })}
+        />
+    </main>
+</Layout>
