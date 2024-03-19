@@ -14,10 +14,10 @@
                 id="logo-color-1"
                 ><stop
                     offset="0"
-                    stop-color="#f9a8d4"
+                    stop-color="#fca5a5"
                 ></stop><stop
                     offset="0.699"
-                    stop-color="#a5b4fc"
+                    stop-color="#c4b5fd"
                 ></stop></linearGradient
             ><linearGradient
                 x1="32"
@@ -28,10 +28,10 @@
                 id="logo-color-2"
                 ><stop
                     offset="0"
-                    stop-color="#f9a8d4"
+                    stop-color="#fca5a5"
                 ></stop><stop
                     offset="0.699"
-                    stop-color="#a5b4fc"
+                    stop-color="#c4b5fd"
                 ></stop></linearGradient
             ><linearGradient
                 x1="32"
@@ -42,10 +42,10 @@
                 id="logo-color-3"
                 ><stop
                     offset="0"
-                    stop-color="#f9a8d4"
+                    stop-color="#fca5a5"
                 ></stop><stop
                     offset="0.699"
-                    stop-color="#a5b4fc"
+                    stop-color="#c4b5fd"
                 ></stop></linearGradient
             ><linearGradient
                 x1="42.165"
@@ -56,10 +56,10 @@
                 id="logo-color-4"
                 ><stop
                     offset="0"
-                    stop-color="#f9a8d4"
+                    stop-color="#fca5a5"
                 ></stop><stop
                     offset="0.699"
-                    stop-color="#a5b4fc"
+                    stop-color="#c4b5fd"
                 ></stop></linearGradient
             ><linearGradient
                 x1="32"
@@ -70,10 +70,10 @@
                 id="logo-color-5"
                 ><stop
                     offset="0"
-                    stop-color="#ec4899"
+                    stop-color="#ef4444"
                 ></stop><stop
                     offset="1"
-                    stop-color="#6366f1"
+                    stop-color="#8b5cf6"
                 ></stop></linearGradient
             ></defs
         ><g
