@@ -25,9 +25,26 @@ import tailyUI from 'taily-ui'
                 description: 'AI chatbot based on 56B tokens LLM, powered by speech to text and voice synthesis.',
                 button: {
                     title: 'Say hello',
-                    link: '/'
+                    link: '#kpi'
                 },
                 github: 'https://github.com/nikdelvin/neuroly'
+            })}
+        />
+        <fragment
+            id="kpi"
+            set:html={tailyUI.KPICards({
+                title: 'Tuning parameters',
+                color: 'error',
+                cards: [
+                    { title: '56B', description1: 'tokens in', description2: 'model' },
+                    { title: '0.7M', description1: 'train-hours of', description2: 'speech' },
+                    { title: '57', description1: 'languages to', description2: 'listen' },
+                    { title: '16', description1: 'languages to', description2: 'speak' }
+                ],
+                button: {
+                    title: 'Make it better',
+                    link: '/'
+                }
             })}
         />
     </main>
