@@ -1,18 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import tailyUI from 'taily-ui'
+
+export async function getStaticPaths() {
+    return [undefined, 'default', 'primary', 'secondary', 'success', 'warning', 'error', 'ghost'].map((theme) => ({
+        params: { theme }
+    }))
+}
+const { theme } = Astro.params
+const colorTheme = (theme as 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'ghost') ?? 'error'
 ---
 
 <Layout
     title="Welcome to Neuroly"
     description="AI chatbot based on 56B tokens LLM, powered by speech-to-text and voice synthesis."
+    color={colorTheme}
 >
     <main class="select-none overflow-hidden">
         <fragment
             set:html={tailyUI.OpenSourcePromo({
                 logo: 'M5.658 5.1088a.971.971-37 00-.3166.7231L5.2985 23.0011l3.2337-2.4367.0305-12.0397 4.9934 3.4245.0057-2.352-6.6784-4.5788a.983.983-37 00-1.2258.0898zM15.4779 3.3599l-.0305 12.0397-4.9934-3.4245-.0057 2.352 6.6784 4.5788a.987.987-37 001.5422-.8115L18.7112.921z',
                 title: 'Neuroly',
-                color: 'error',
+                color: colorTheme,
                 text: [
                     { type: 'default', value: 'Generate' },
                     { type: 'primary', value: 'beautiful' },
@@ -34,7 +43,7 @@ import tailyUI from 'taily-ui'
             id="kpi"
             set:html={tailyUI.KPICards({
                 title: 'Tuning parameters',
-                color: 'error',
+                color: colorTheme,
                 cards: [
                     { title: '56B', description1: 'tokens in', description2: 'model' },
                     { title: '0.7M', description1: 'train-hours of', description2: 'speech' },
