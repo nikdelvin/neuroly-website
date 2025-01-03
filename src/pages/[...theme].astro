@@ -5,6 +5,23 @@ import * as tailyUI from 'taily-ui'
 const month = new Date().getMonth()
 const day = new Date().getDate()
 const year = new Date().getFullYear()
+const monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+]
+function getDate(date: Date) {
+    return [date.getDate().toString(), monthNames[date.getMonth()], date.getFullYear().toString()]
+}
 export async function getStaticPaths() {
     return [undefined, 'default', 'primary', 'secondary', 'success', 'warning', 'error', 'ghost'].map((theme) => ({
         params: { theme }
@@ -57,6 +74,129 @@ const colorTheme = (theme as 'default' | 'primary' | 'secondary' | 'success' | '
                     title: 'Make it better',
                     link: '/'
                 }
+            })}
+        />
+        <fragment
+            id="features"
+            set:html={tailyUI.FeatureCards({
+                title: 'Chatbot who listens',
+                color: colorTheme,
+                reverse: false,
+                featureTitle: 'Recognize',
+                featureDescription: [
+                    { type: 'default', value: 'The way' },
+                    { type: 'primary', value: 'you' },
+                    { type: 'default', value: 'ask all exciting' },
+                    { type: 'primary', value: 'questions' }
+                ],
+                featureOptions: [
+                    '56 billion tokens and 700,000 training hours AI model resulting in cutting-edge speech recognition',
+                    'Contextual understanding that goes beyond simple keywords, allowing for more natural, engaging conversations, and personalized interaction',
+                    'Professional fluency in 57 diverse languages with a wide range from English to Mandarin Chinese'
+                ],
+                button: {
+                    title: 'Ask your question',
+                    link: '#features_2'
+                }
+            })}
+        />
+        <fragment
+            id="features_2"
+            set:html={tailyUI.FeatureCards({
+                title: 'Chatbot who speaks',
+                color: colorTheme,
+                reverse: true,
+                featureTitle: 'Answer',
+                featureDescription: [
+                    { type: 'default', value: 'In a way' },
+                    { type: 'secondary', value: 'you' },
+                    { type: 'default', value: 'can easily listen &' },
+                    { type: 'secondary', value: 'understand' }
+                ],
+                featureOptions: [
+                    'More than 20 unique multilingual AI voices trained with help of experienced voice actors to sound real',
+                    'Adaptive tone and speaking style that adjusts to the context of conversation, mirroring your emotions and energy levels, keeping conversation flowing naturally',
+                    "Customize scenario script of the model persona's backstory to get more immersive conversations"
+                ],
+                button: {
+                    title: 'Get your answer',
+                    link: '#stages'
+                }
+            })}
+        />
+        <fragment
+            id="stages"
+            set:html={tailyUI.Jobs({
+                title: 'Project roadmap',
+                color: colorTheme,
+                jobs: [
+                    {
+                        from: getDate(new Date()),
+                        to: getDate(new Date(Date.now() + 3 * 30 * 24 * 60 * 60 * 1000)),
+                        title: 'Phase I: Multilingual foundation',
+                        description: [
+                            { type: 'default', value: 'Core for' },
+                            { type: 'primary', value: 'speech' },
+                            { type: 'default', value: 'recognition &' },
+                            { type: 'primary', value: 'NLP' },
+                            { type: 'default', value: 'engine' }
+                        ],
+                        role: [
+                            'Diverse language dataset of speech and text in 57 languages with representation of various accents, dialects, and speaking styles',
+                            'Transformer-based architecture for speech recognition and NLP tasks, capable of handling multilingual input and large-scale training',
+                            'Evaluation metrics, hyperparameter tuning, and data augmentation to achieve professional fluency & accuracy across all 57 languages'
+                        ]
+                    },
+                    {
+                        from: getDate(new Date(Date.now() + (3 * 30 + 1) * 24 * 60 * 60 * 1000)),
+                        to: getDate(new Date(Date.now() + (6 * 30 + 1) * 24 * 60 * 60 * 1000)),
+                        title: 'Phase II: Personality customization',
+                        description: [
+                            { type: 'default', value: 'Emotions,' },
+                            { type: 'primary', value: 'adaptive' },
+                            { type: 'default', value: 'tone and' },
+                            { type: 'primary', value: 'speaking' },
+                            { type: 'default', value: 'style' }
+                        ],
+                        role: [
+                            'Sentiment analysis capabilities integration allows model to detect and interpret emotions expressed in text or speech accurately',
+                            'A wide library of unique AI voices prepared by experienced voice actors representing diverse language backgrounds & acting styles',
+                            'Tool for defining and customizing AI personalities allows users to select or create personalities that align with their preferences'
+                        ]
+                    },
+                    {
+                        from: getDate(new Date(Date.now() + (6 * 30 + 2) * 24 * 60 * 60 * 1000)),
+                        to: getDate(new Date(Date.now() + (9 * 30 + 2) * 24 * 60 * 60 * 1000)),
+                        title: 'Phase III: Contextual awareness',
+                        description: [
+                            { type: 'default', value: 'Topics' },
+                            { type: 'primary', value: 'perception' },
+                            { type: 'default', value: '& proactive' },
+                            { type: 'primary', value: 'suggestions' }
+                        ],
+                        role: [
+                            'Coreference resolution capabilities integration to accurately track entities across multiple sentences, ensuring reference accuracy',
+                            'Algorithm to track evolution of topics throughout the conversation, recognizing shifts in focus and adapting its responses accordingly',
+                            "System to retrieve and present personalized content like articles, recommendations, and data based on user's interests and context"
+                        ]
+                    },
+                    {
+                        from: getDate(new Date(Date.now() + (9 * 30 + 3) * 24 * 60 * 60 * 1000)),
+                        to: getDate(new Date(Date.now() + (12 * 30 + 3) * 24 * 60 * 60 * 1000)),
+                        title: 'Phase IV: Advanced interaction',
+                        description: [
+                            { type: 'default', value: 'Seamless' },
+                            { type: 'primary', value: 'language' },
+                            { type: 'default', value: '& text formats' },
+                            { type: 'primary', value: 'switching' }
+                        ],
+                        role: [
+                            'Cross-lingual transfer learning to enhance the AI model ability to understand and respond appropriately in multilingual conversations',
+                            'Normalization of text input to handle variations in spelling, punctuation, grammar and allowing for consistent processing',
+                            'Switching engine for seamless transitions between languages and text formats in real-time, without interrupting flow of conversation'
+                        ]
+                    }
+                ]
             })}
         />
         <fragment
@@ -225,7 +365,7 @@ const colorTheme = (theme as 'default' | 'primary' | 'secondary' | 'success' | '
                             { type: 'primary', value: 'Libraries:' },
                             {
                                 type: 'default',
-                                value: 'Bootstrap, Tailwind, Formik, Redux, Recoil, MUI, Framer, Three JS'
+                                value: 'Bootstrap, Tailwind, Formik, Redux, Recoil, GSAP, Framer, Three.JS'
                             },
                             { type: 'default', value: '<div style="padding:8px;"></div>' },
                             { type: 'default', value: 'And more other deeply learned' },
@@ -274,3 +414,23 @@ const colorTheme = (theme as 'default' | 'primary' | 'secondary' | 'success' | '
         />
     </main>
 </Layout>
+<style is:global>
+    :root::-webkit-scrollbar {
+        display: none !important;
+    }
+    :root::-webkit-scrollbar-thumb {
+        background-color: transparent !important;
+    }
+    :root::-webkit-scrollbar-track {
+        background-color: transparent !important;
+    }
+    .overflow-x-scroll::-webkit-scrollbar {
+        display: none !important;
+    }
+    .overflow-x-scroll::-webkit-scrollbar-thumb {
+        background-color: transparent !important;
+    }
+    .overflow-x-scroll::-webkit-scrollbar-track {
+        background-color: transparent !important;
+    }
+</style>
